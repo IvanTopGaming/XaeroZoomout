@@ -1,4 +1,5 @@
 import util.PropUtil
+import util.XaeroLib
 
 plugins {
     id("multiloader-loader")
@@ -75,3 +76,7 @@ neoForge {
 sourceSets.main.resources {
     srcDir("src/generated/resources")
 }
+
+// XaeroLib is nested inside Xaero's World Map, so extract it for compile-only access to the
+// config classes targeted by mixins.
+XaeroLib.addCompileOnly(project, project.property("v_neoforge_xworldmap") as String)

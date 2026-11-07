@@ -2,7 +2,6 @@
   "required": true,
   "minVersion": "${mixin_version_min}",
   "package": "dev.terminalmc.xaerozoomout.mixin",
-  "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_${java_version}",
   "mixinextras": {
     "minVersion": "${mixinextras_version_min}"
@@ -10,7 +9,7 @@
   "mixins": [
   ],
   "client": [
-    "MixinGuiMap"
+    "MixinClientConfigManager"
   ],
   "server": [
   ],

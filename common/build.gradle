@@ -1,4 +1,5 @@
 import util.PropUtil
+import util.XaeroLib
 
 plugins {
     id("multiloader-common")
@@ -47,6 +48,10 @@ dependencies {
     }
     new PropUtil(project).applyDependencies(project.name, selector)
 }
+
+// XaeroLib is nested inside Xaero's World Map, so extract it for compile-only access to the
+// config classes targeted by mixins.
+XaeroLib.addCompileOnly(project, project.property("v_fabric_xworldmap") as String)
 
 // Configure Loom
 loom {
